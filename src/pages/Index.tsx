@@ -70,7 +70,7 @@ const Index = () => {
     noBtnRef.current.style.position = "absolute";
     noBtnRef.current.style.left = `${x}px`;
     noBtnRef.current.style.top = `${y}px`;
-    noBtnRef.current.style.transition = "left 0.15s, top 0.15s";
+    noBtnRef.current.style.transition = "left 0.3s ease-out, top 0.3s ease-out";
   }, []);
 
   if (accepted) {
