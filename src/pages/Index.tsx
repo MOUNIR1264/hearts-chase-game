@@ -84,7 +84,7 @@ const Index = () => {
         ))}
         <div className="animate-celebrate text-center z-10 px-6">
           <h1 className="font-script text-6xl md:text-8xl text-primary mb-6">
-            YAY!!! <Emoji emoji="🫶" size={64} />
+            YESSSSS!!! <Emoji emoji="🫶" size={64} />
           </h1>
           <p className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
             Best decision ever <Emoji emoji="🥹" size={32} /> <Emoji emoji="✨" size={32} />
