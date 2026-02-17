@@ -110,6 +110,7 @@ const Index = () => {
         <div className="mb-6 animate-float">
           <Emoji emoji="🫶" size={64} />
         </div>
+        <h1>MAROUUA<h1/><br>
         <h1 className="font-script text-5xl md:text-7xl text-primary mb-4 drop-shadow-sm">
           Will you be my Valentine?
         </h1>
