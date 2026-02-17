@@ -1,13 +1,14 @@
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef } from "react";
+import Emoji from "@/components/Emoji";
 
-const HEARTS = ["🫶", "🩷", "🪽", "✨", "🦋", "💫", "🌸", "🫧", "💐", "🧸"];
+const HEARTS = ["🫶", "🩷", "✨", "🦋", "💫", "🌸", "🫧", "💐", "🧸", "🪻"];
 
 function FloatingHeart({ index }: { index: number }) {
   const heart = HEARTS[index % HEARTS.length];
   const left = Math.random() * 100;
   const duration = 6 + Math.random() * 6;
   const delay = Math.random() * 8;
-  const size = 16 + Math.random() * 24;
+  const size = 20 + Math.random() * 28;
 
   return (
     <span
@@ -15,12 +16,11 @@ function FloatingHeart({ index }: { index: number }) {
       style={{
         left: `${left}%`,
         bottom: 0,
-        fontSize: size,
         animationDuration: `${duration}s`,
         animationDelay: `${delay}s`,
       }}
     >
-      {heart}
+      <Emoji emoji={heart} size={size} />
     </span>
   );
 }
@@ -84,13 +84,13 @@ const Index = () => {
         ))}
         <div className="animate-celebrate text-center z-10 px-6">
           <h1 className="font-script text-6xl md:text-8xl text-primary mb-6">
-            YAY!!! 🫶
+            YAY!!! <Emoji emoji="🫶" size={64} />
           </h1>
           <p className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-            Best decision ever 🥹✨
+            Best decision ever <Emoji emoji="🥹" size={32} /> <Emoji emoji="✨" size={32} />
           </p>
           <p className="text-xl md:text-2xl text-muted-foreground">
-            I love you so much 🩷🫧
+            I love you so much <Emoji emoji="🩷" size={28} /> <Emoji emoji="🫧" size={28} />
           </p>
         </div>
       </div>
@@ -107,29 +107,31 @@ const Index = () => {
       ))}
 
       <div className="z-10 text-center px-6">
-        <p className="text-6xl mb-6 animate-float">🫶</p>
+        <div className="mb-6 animate-float">
+          <Emoji emoji="🫶" size={64} />
+        </div>
         <h1 className="font-script text-5xl md:text-7xl text-primary mb-4 drop-shadow-sm">
           Will you be my Valentine?
         </h1>
         <p className="text-lg text-muted-foreground mb-12">
-          Choose wisely... 🦋✨
+          Choose wisely... <Emoji emoji="🦋" size={20} /> <Emoji emoji="✨" size={20} />
         </p>
 
         <div className="flex gap-6 justify-center items-center relative min-h-[80px]">
           <button
             onClick={() => setAccepted(true)}
-            className="gradient-romantic text-primary-foreground font-bold text-xl px-10 py-4 rounded-full shadow-romantic animate-pulse-glow hover:scale-110 transition-transform duration-200 z-10"
+            className="gradient-romantic text-primary-foreground font-bold text-xl px-10 py-4 rounded-full shadow-romantic animate-pulse-glow hover:scale-110 transition-transform duration-200 z-10 flex items-center gap-2"
           >
-            YES 🤍
+            YES <Emoji emoji="🤍" size={22} />
           </button>
 
           <button
             ref={noBtnRef}
             onMouseEnter={moveNoButton}
             onTouchStart={moveNoButton}
-            className="bg-card text-foreground font-semibold text-lg px-8 py-3 rounded-full border border-border shadow-sm hover:shadow-md transition-all duration-200 z-10"
+            className="bg-card text-foreground font-semibold text-lg px-8 py-3 rounded-full border border-border shadow-sm hover:shadow-md transition-all duration-200 z-10 flex items-center gap-2"
           >
-            No 🙈
+            No <Emoji emoji="🙈" size={20} />
           </button>
         </div>
       </div>
